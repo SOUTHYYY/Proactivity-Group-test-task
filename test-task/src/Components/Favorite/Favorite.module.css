@@ -1,0 +1,36 @@
+
+.Favorites{
+    height: 100%;
+    width: 100%;
+}
+
+.Favorites h1{
+    padding: 0;
+    margin: 0;
+    padding: 30px;
+}
+
+.Favorites_items {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.EmptyList{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.EmptyList p{
+    padding: 0;
+    margin: 0;
+    color: gray;
+    font-weight: bold;
+}

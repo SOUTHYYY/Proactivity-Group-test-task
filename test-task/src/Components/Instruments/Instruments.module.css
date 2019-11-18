@@ -1,0 +1,61 @@
+.Instruments {
+    min-height: 100%;
+    padding: 20px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Instruments img {
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+}
+
+
+.active{
+    color: rgb(231, 15, 39, 0.5) ;
+}
+
+.Instruments_header{
+    width: 85%;
+    display: flex;
+    color: lightgray;
+    font-weight: bold;
+}
+.Instruments_header__titles{
+    width: 400px;
+}
+
+.Instruments_header__projects{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 150px;
+}
+
+.Instruments_header__partners{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.Instruments_header__rate{
+    width: 250px;   
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.Instruments_items{
+    width: 85%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}

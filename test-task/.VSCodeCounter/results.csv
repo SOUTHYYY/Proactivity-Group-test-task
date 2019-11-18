@@ -1,0 +1,39 @@
+filename, language, Markdown, JSON, HTML, JavaScript, CSS, JavaScript React, XML, comment, blank, total
+/Users/leshka.l1337/Desktop/test-task/test-task/README.md, Markdown, 37, 0, 0, 0, 0, 0, 0, 0, 32, 69
+/Users/leshka.l1337/Desktop/test-task/test-task/package-lock.json, JSON, 0, 13539, 0, 0, 0, 0, 0, 0, 1, 13540
+/Users/leshka.l1337/Desktop/test-task/test-task/package.json, JSON, 0, 36, 0, 0, 0, 0, 0, 0, 1, 37
+/Users/leshka.l1337/Desktop/test-task/test-task/public/index.html, HTML, 0, 0, 20, 0, 0, 0, 0, 23, 1, 44
+/Users/leshka.l1337/Desktop/test-task/test-task/public/manifest.json, JSON, 0, 25, 0, 0, 0, 0, 0, 0, 1, 26
+/Users/leshka.l1337/Desktop/test-task/test-task/src/API/api.js, JavaScript, 0, 0, 0, 30, 0, 0, 0, 8, 4, 42
+/Users/leshka.l1337/Desktop/test-task/test-task/src/App.css, CSS, 0, 0, 0, 0, 21, 0, 0, 0, 6, 27
+/Users/leshka.l1337/Desktop/test-task/test-task/src/App.js, JavaScript, 0, 0, 0, 27, 0, 0, 0, 0, 5, 32
+/Users/leshka.l1337/Desktop/test-task/test-task/src/App.test.js, JavaScript, 0, 0, 0, 8, 0, 0, 0, 0, 2, 10
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Common/Preloader/Preloader.jsx, JavaScript React, 0, 0, 0, 0, 0, 8, 0, 0, 2, 10
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Favorite/Favorite.module.css, CSS, 0, 0, 0, 0, 31, 0, 0, 0, 5, 36
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Favorite/FavoriteCompanyItem/FavoriteCompanyItem.jsx, JavaScript React, 0, 0, 0, 0, 0, 38, 0, 0, 7, 45
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Favorite/FavoriteCompanyItem/FavoriteCompanyItem.module.css, CSS, 0, 0, 0, 0, 29, 0, 0, 0, 4, 33
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Favorite/Favorites.jsx, JavaScript React, 0, 0, 0, 0, 0, 34, 0, 0, 8, 42
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Favorite/FavoritesContainer.jsx, JavaScript React, 0, 0, 0, 0, 0, 19, 0, 0, 3, 22
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Footer/Footer.jsx, JavaScript React, 0, 0, 0, 0, 0, 42, 0, 0, 3, 45
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Footer/Footer.module.css, CSS, 0, 0, 0, 0, 19, 0, 0, 0, 2, 21
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Instruments/CompanyItem/CompanyItem.jsx, JavaScript React, 0, 0, 0, 0, 0, 42, 0, 36, 10, 88
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Instruments/CompanyItem/CompanyItem.module.css, CSS, 0, 0, 0, 0, 38, 0, 0, 31, 12, 81
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Instruments/Instruments.jsx, JavaScript React, 0, 0, 0, 0, 0, 76, 0, 0, 7, 83
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Instruments/Instruments.module.css, CSS, 0, 0, 0, 0, 63, 0, 0, 0, 9, 72
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Instruments/InstrumentsContainer.jsx, JavaScript React, 0, 0, 0, 0, 0, 44, 0, 0, 2, 46
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Navbar/Navbar.jsx, JavaScript React, 0, 0, 0, 0, 0, 53, 0, 0, 2, 55
+/Users/leshka.l1337/Desktop/test-task/test-task/src/Components/Navbar/Navbar.module.css, CSS, 0, 0, 0, 0, 110, 0, 0, 0, 18, 128
+/Users/leshka.l1337/Desktop/test-task/test-task/src/image/Spinner-1s-200px.svg, XML, 0, 0, 0, 0, 0, 0, 37, 0, 0, 37
+/Users/leshka.l1337/Desktop/test-task/test-task/src/image/check-box-check.svg, XML, 0, 0, 0, 0, 0, 0, 6, 0, 1, 7
+/Users/leshka.l1337/Desktop/test-task/test-task/src/image/check-box-empty.svg, XML, 0, 0, 0, 0, 0, 0, 4, 0, 1, 5
+/Users/leshka.l1337/Desktop/test-task/test-task/src/image/enter.svg, XML, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1
+/Users/leshka.l1337/Desktop/test-task/test-task/src/image/find.svg, XML, 0, 0, 0, 0, 0, 0, 43, 1, 1, 45
+/Users/leshka.l1337/Desktop/test-task/test-task/src/image/sort-down.svg, XML, 0, 0, 0, 0, 0, 0, 4, 0, 1, 5
+/Users/leshka.l1337/Desktop/test-task/test-task/src/image/star.svg, XML, 0, 0, 0, 0, 0, 0, 42, 1, 1, 44
+/Users/leshka.l1337/Desktop/test-task/test-task/src/index.css, CSS, 0, 0, 0, 0, 12, 0, 0, 0, 2, 14
+/Users/leshka.l1337/Desktop/test-task/test-task/src/index.js, JavaScript, 0, 0, 0, 15, 0, 0, 0, 3, 3, 21
+/Users/leshka.l1337/Desktop/test-task/test-task/src/redux/favoritesReducer.js, JavaScript, 0, 0, 0, 54, 0, 0, 0, 0, 13, 67
+/Users/leshka.l1337/Desktop/test-task/test-task/src/redux/instrumentReducer.js, JavaScript, 0, 0, 0, 107, 0, 0, 0, 0, 7, 114
+/Users/leshka.l1337/Desktop/test-task/test-task/src/redux/redux-store.js, JavaScript, 0, 0, 0, 21, 0, 0, 0, 0, 7, 28
+/Users/leshka.l1337/Desktop/test-task/test-task/src/serviceWorker.js, JavaScript, 0, 0, 0, 92, 0, 0, 0, 31, 13, 136
+Total, -, 37, 13600, 20, 354, 323, 356, 137, 134, 197, 15158

@@ -1,0 +1,33 @@
+.FavoriteCompanyItem{
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.FavoriteCompanyItem_info {
+    display: flex;
+    align-items: center;
+}
+
+.FavoriteCompanyItem_info img{
+    width: 20px;
+    height: 15px;
+}
+
+.FavoriteCompanyItem button {
+    border: 2px solid red;
+    color: red;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 5px 20px;
+    transition: 0.2s;
+}
+
+.FavoriteCompanyItem button:hover{
+    background-color: red;
+    color: #fff;
+    transition: 0.2s;
+}

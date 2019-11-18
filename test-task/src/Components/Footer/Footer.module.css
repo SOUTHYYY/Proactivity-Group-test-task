@@ -1,0 +1,21 @@
+.Footer {
+    margin-top: 40px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+.Footer_item {
+    font-weight: bold;
+    font-size: 15px;
+    color: gray;
+}
+
+.Footer_item__info:first-child{
+    margin-top: 20px;
+}
+
+.Footer_item__info{
+    margin-top: 10px;
+    color: #000;
+    font-size: 13px;
+}
