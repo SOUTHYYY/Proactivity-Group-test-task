@@ -3,7 +3,7 @@ import styles from './FavoriteCompanyItem.module.css'
 
 
 const FavoriteCompanyItem = (props) => {
-    
+
     const deleteItems = () => {
         let data = {
             title: props.title,
@@ -17,27 +17,25 @@ const FavoriteCompanyItem = (props) => {
     }
 
 
-    return(
-        <div className={styles.FavoriteCompanyItem}>
-            <div className={styles.FavoriteCompanyItem_info}>
-                <img src={props.image} alt="ajnj" />
+    return (
+        <tr className={styles.border_bottom}>
+            <th>
+                <img src={props.image} alt="logo" />
                 <p>{props.title}</p>
-            </div>
-            <div className={styles.FavoriteCompanyItem_worksCount}>
-                <div className={styles.FavoriteCompanyItem_worksCount__item}>
-                    {props.worksCount} проекта
-                </div>
-            </div>
-            <div>
+            </th>
+            <th>
+                {props.worksCount} проекта
+        </th>
+            <th>
                 {props.partnersCount} партнера
-            </div>
-            <div className={styles.FavoriteCompanyItem_rate}>
+        </th>
+            <th>
                 {props.rate}
-            </div>
-            <div>
+            </th>
+            <th className={styles.FavoriteCompanyItem}>
                 <button onClick={deleteItems}>Удалить</button>
-            </div>
-        </div>
+            </th>
+        </tr>
     )
 }
 

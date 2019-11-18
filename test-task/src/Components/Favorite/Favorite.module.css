@@ -12,7 +12,6 @@
 
 .Favorites_items {
     width: 100%;
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,4 +32,10 @@
     margin: 0;
     color: gray;
     font-weight: bold;
+}
+table{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

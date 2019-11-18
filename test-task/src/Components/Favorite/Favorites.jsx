@@ -28,7 +28,11 @@ const Favorites = (props) => {
         <h1>Выбранные компании:</h1>
         {favoriteItems.length ?
             <div className={styles.Favorites_items}>
-                {favoriteItems.length ? favorite : EMPTY_LIST}
+                {favoriteItems.length ? 
+                <table>
+                    {favorite}
+                </table>
+                 : EMPTY_LIST}
             </div>
             :
             <div className={styles.EmptyList}>

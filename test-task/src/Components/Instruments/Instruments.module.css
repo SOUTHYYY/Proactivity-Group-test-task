@@ -25,6 +25,8 @@
 }
 .Instruments_header__titles{
     width: 400px;
+    display: flex;
+    margin-left: 55px;
 }
 
 .Instruments_header__projects{
@@ -58,4 +60,13 @@
 table {
     border-collapse: collapse;
     width: 100%;
+}
+
+.selectedPage{
+    font-weight: bold;
+    padding: 5px;
+}
+
+.currentPage{
+    
 }

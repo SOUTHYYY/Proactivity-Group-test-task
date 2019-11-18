@@ -7,6 +7,14 @@ import sort from '../../image/sort-down.svg'
 
 const Instruments = (props) => {
 
+    let pagesCount = Math.ceil(props.totalCompaniesCount / 20)
+    let pages = []
+
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i)
+    }
+
+
     let companyItems =
         props.companies.map(company =>
             <CompanyItem id={company.id}
@@ -50,6 +58,11 @@ const Instruments = (props) => {
             props.getIsSortedByPartnersCount()
         }
     }
+    const onPageChanged = (p) => {
+        debugger
+        props.setCurrentPage(p)
+        props.onPageChanged()
+    }
 
     return (
         <div className={styles.Instruments}>
@@ -77,6 +90,12 @@ const Instruments = (props) => {
                 <table>
                     {companyItems}
                 </table>
+            </div>
+            <div className={styles.pages}>
+                {pages.map(p => {
+                    return <span className={styles.currentPage && styles.selectedPage}
+                        onClick={() => {onPageChanged(p)}}>{p}</span>
+                })}
             </div>
         </div>
     )

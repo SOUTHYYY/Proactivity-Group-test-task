@@ -1,23 +1,48 @@
-.FavoriteCompanyItem{
-    display: flex;
-    width: 85%;
-    justify-content: space-between;
-    align-items: center;
+
+tr{
+    border-bottom: 1px solid lightgray;
+    display: flex;   
+}
+
+th{
     padding: 20px 0px;
-    border-bottom: 1px solid lightgrey;
+    
 }
 
-.FavoriteCompanyItem_info {
-    display: flex;
-    align-items: center;
-}
-
-.FavoriteCompanyItem_info img{
+img{ 
     width: 20px;
     height: 15px;
+    margin-right: 10px;
 }
 
+th{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: normal;
+}
+
+th:first-child{
+    width: 400px;
+    font-weight: bold;
+}
+th:nth-child(2){
+    width: 150px;
+    
+}
+
+th:nth-child(3){
+    width: 150px;
+}
+
+th:nth-child(4){
+    
+    width: 150px;
+}
+
+
 .FavoriteCompanyItem button {
+    margin-left: 100px;
     border: 2px solid red;
     color: red;
     background-color: #fff;
