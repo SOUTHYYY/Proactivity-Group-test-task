@@ -6,7 +6,7 @@ import {addFavoriteItem} from '../../redux/favoritesReducer'
 import Instruments from './Instruments';
 import Preloader from '../Common/Preloader/Preloader';
 
-class instrumentReduser extends React.Component {
+class InstrumentContainer extends React.Component {
     componentWillMount() {
         this.props.requestCompanies('cms', 1)
     }
@@ -40,4 +40,4 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps,{
     requestCompanies, getIsSortedByRate, getIsSortedByWorksCount,
     addFavoriteItem, isFavoriteActionCreator, sotrCompanies,
-    getIsSortedByPartnersCount})(instrumentReduser)
+    getIsSortedByPartnersCount})(InstrumentContainer)

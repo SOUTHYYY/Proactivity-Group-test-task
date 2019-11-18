@@ -5,7 +5,8 @@ import star from '../../image/star.svg'
 import find from '../../image/find.svg'
 import enter from '../../image/enter.svg'
 
-const Navbar = () => {
+const Navbar = (props) => {
+    debugger
     return (
         <div>
             <div className={styles.Navbar_wrapper}>
@@ -34,8 +35,19 @@ const Navbar = () => {
                 <div className={styles.Navbar_instruments}>
                     <div className={styles.Navbar_instruments__item}>
                         <NavLink to='/favorites' activeClassName={styles.activeLink}>
-                            <img src={star} alt="" />
-                            <p>Избранное</p>
+                            <div className={styles.Navbar_instruments__itemInfo}>
+                                <img src={star} alt="" />
+                                <p>Избранное</p>
+                            </div>
+                            <div>
+                            {props.favoriteItems.length ?
+                                <div className={styles.Navbar_instruments__favoriteLength}>
+                                    {props.favoriteItems.length}
+                                </div>
+                                :
+                                null}
+                            </div>
+                            
                         </NavLink>
                     </div>
                     <div className={styles.Navbar_instruments__item}>

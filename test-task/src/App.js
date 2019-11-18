@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
 import {Route} from 'react-router-dom'
-import Favorites from './Components/Favorite/Favorites'
-import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer'
 import InstrumentsContainer from './Components/Instruments/InstrumentsContainer';
 import FavoritesContainer from './Components/Favorite/FavoritesContainer';
+import NavbarContainer from './Components/Navbar/NavbarContainer';
 
 
 class App extends React.Component {
@@ -13,7 +12,7 @@ class App extends React.Component {
     return (
       <div className='app-wrapper'>
         <div className="main-wrapper">
-          <Navbar />
+          <NavbarContainer />
           <div className='content'>
             <Route path='/instruments' render={ () => <InstrumentsContainer />}/>
             <Route path='/favorites' render={() => <FavoritesContainer />}/>
