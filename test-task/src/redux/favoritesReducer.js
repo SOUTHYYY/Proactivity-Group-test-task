@@ -7,7 +7,7 @@ export const initialState = {
 
 let updateItems = (arr, payload) => {
     let items = arr
-    if (arr.findIndex(el => el.id === payload.id)){
+    if (arr.findIndex(el => el.id === payload.id)) {
         items = [
             ...items,
             payload
@@ -18,27 +18,21 @@ let updateItems = (arr, payload) => {
 
 const deleteElem = (arr, payload) => {
     const newArray = arr.filter(item => {
-      if (item.id === payload.id) return false;
-      return item;
+        if (item.id === payload.id) return false;
+        return item;
     });
-  
+
     return newArray;
 }
 
-const setItemsToStorage = (arr) => {
-    let favoriteItems = [arr]
-    localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
-}
 
 const favoritesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_FAVORITE_ITEM:{
-            setItemsToStorage([...state.favoriteItems, action.payload])
+        case ADD_FAVORITE_ITEM:
             return {
                 ...state,
                 favoriteItems: updateItems(state.favoriteItems, action.payload)
             }
-        }
         case DELETE_FAVOROTE_ITEM:
             return {
                 ...state,
