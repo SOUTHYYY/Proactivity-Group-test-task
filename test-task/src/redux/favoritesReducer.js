@@ -15,14 +15,14 @@ let updateItems = (arr, payload) => {
     }
     return items
 }
-let deleteElem = (arr, payload) => {
-    let items = []
-    arr.map(el => {
-        if (el.id != payload.id) {
-            items.push(el)
-        }
-    })
-    return items
+
+const deleteElem = (arr, payload) => {
+    const newArray = arr.filter(item => {
+      if (item.id === payload.id) return false;
+      return item;
+    });
+  
+    return newArray;
 }
 
 const setItemsToStorage = (arr) => {
