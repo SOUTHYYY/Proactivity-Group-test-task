@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-# Тестовое здаание для Компании ProactivityGroup
+# Тестовое задание для Компании ProactivityGroup
 
 
 ### Идея тестового задания: 
