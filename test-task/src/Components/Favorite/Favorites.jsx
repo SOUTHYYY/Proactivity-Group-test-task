@@ -4,17 +4,18 @@ import FavoriteCompanyItem from './FavoriteCompanyItem/FavoriteCompanyItem'
 
 
 
-const Favorites = (props) => {
+const Favorites = ({favoriteItems, deleteFavoriteItem}) => {
+    debugger
 
     const EMPTY_LIST = 'К сожалению ваш список пуст, пожалуйста выберите нужные вам инструменты'
-    const [favoriteItems, setFavoriteItems] = useState(props.favoriteItems)
+    const [favotiteCompanies, setFavotiteCompanies] = useState(favoriteItems)
 
     useEffect(() => {
-        setFavoriteItems(props.favoriteItems)
-    }, [props.favoriteItems])
+        setFavotiteCompanies(favoriteItems)
+    }, [favoriteItems])
     console.log('favoriteItems', favoriteItems)
 
-    let favorite = favoriteItems.map(item =>
+    let favorite = favotiteCompanies.map(item =>
         <FavoriteCompanyItem title={item.title}
             id={item.id}
             key={item.id}
@@ -22,13 +23,13 @@ const Favorites = (props) => {
             partnersCount={item.partnersCount}
             worksCount={item.worksCount}
             image={item.image}
-            deleteFavoriteItem={props.deleteFavoriteItem} />
+            deleteFavoriteItem={deleteFavoriteItem} />
     )
     return <div className={styles.Favorites}>
         <h1>Выбранные компании:</h1>
-        {favoriteItems.length ?
+        {favotiteCompanies.length ?
             <div className={styles.Favorites_items}>
-                {favoriteItems.length ? 
+                {favotiteCompanies.length ? 
                 <table>
                     {favorite}
                 </table>

@@ -6,7 +6,6 @@ import find from '../../image/find.svg'
 import enter from '../../image/enter.svg'
 
 const Navbar = (props) => {
-    debugger
     return (
         <div>
             <div className={styles.Navbar_wrapper}>

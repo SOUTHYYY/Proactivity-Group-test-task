@@ -5,9 +5,12 @@ import sort from '../../image/sort-down.svg'
 
 
 
-const Instruments = (props) => {
+const Instruments = ({companies, addFavoriteItem, isFavoriteActionCreator, isSortedByRate,
+    totalCompaniesCount, sotrCompanies, getIsSortedByRate,
+    requestCompanies, isSortedByWorksCount, getIsSortedByWorksCount,
+    isSortedByPartnersCount, getIsSortedByPartnersCount, setCurrentPage, onPageChanged}) => {
 
-    let pagesCount = Math.ceil(props.totalCompaniesCount / 20)
+    let pagesCount = Math.ceil(totalCompaniesCount / 20)
     let pages = []
 
     for (let i = 1; i <= pagesCount; i++) {
@@ -16,7 +19,7 @@ const Instruments = (props) => {
 
 
     let companyItems =
-        props.companies.map(company =>
+        companies.map(company =>
             <CompanyItem id={company.id}
                 image={company.image}
                 title={company.title}
@@ -24,44 +27,43 @@ const Instruments = (props) => {
                 partnersCount={company.partnersCount}
                 worksCount={company.worksCount}
                 key={company.id}
-                addFavoriteItem={props.addFavoriteItem}
+                addFavoriteItem={addFavoriteItem}
                 isFavorite={company.isFavorite}
-                isFavoriteActionCreator={props.isFavoriteActionCreator} />)
+                isFavoriteActionCreator={isFavoriteActionCreator} />)
 
     const sotrCompanysByRate = () => {
-        if (props.isSortedByRate === false) {
-            props.sotrCompanies('rate')
-            props.getIsSortedByRate()
+        if (isSortedByRate === false) {
+            sotrCompanies('rate')
+            getIsSortedByRate()
         }
         else {
-            props.requestCompanies()
-            props.getIsSortedByRate()
+            requestCompanies()
+            getIsSortedByRate()
         }
     }
     const sotrCompanysByRateByWorkCount = () => {
-        if (props.isSortedByWorksCount === false) {
-            props.sotrCompanies('works_count')
-            props.getIsSortedByWorksCount()
+        if (isSortedByWorksCount === false) {
+            sotrCompanies('works_count')
+            getIsSortedByWorksCount()
         }
         else {
-            props.requestCompanies()
-            props.getIsSortedByWorksCount()
+            requestCompanies()
+            getIsSortedByWorksCount()
         }
     }
     const sortCompanysByPartnersCount = () => {
-        if (props.isSortedByPartnersCount === false) {
-            props.sotrCompanies('partners_count')
-            props.getIsSortedByPartnersCount()
+        if (isSortedByPartnersCount === false) {
+            sotrCompanies('partners_count')
+            getIsSortedByPartnersCount()
         }
         else {
-            props.requestCompanies()
-            props.getIsSortedByPartnersCount()
+            requestCompanies()
+            getIsSortedByPartnersCount()
         }
     }
-    const onPageChanged = (p) => {
-        debugger
-        props.setCurrentPage(p)
-        props.onPageChanged()
+    const handlePageChanged = (p) => {
+        setCurrentPage(p)
+        onPageChanged()
     }
 
     return (
@@ -72,15 +74,15 @@ const Instruments = (props) => {
                 </div>
                 <div className={styles.Instruments_header__projects} activeClassName={styles.active} onClick={sotrCompanysByRateByWorkCount}>
                     Проекты
-                    {props.isSortedByWorksCount ? <img src={sort} alt='sorted'></img> : null}
+                    {isSortedByWorksCount ? <img src={sort} alt='sorted'></img> : null}
                 </div>
                 <div className={styles.Instruments_header__partners} onClick={sortCompanysByPartnersCount}>
                     Партнеры
-                    {props.isSortedByPartnersCount ? <img src={sort} alt='sorted'></img> : null}
+                    {isSortedByPartnersCount ? <img src={sort} alt='sorted'></img> : null}
                 </div>
                 <div onClick={sotrCompanysByRate} className={styles.Instruments_header__rate}>
                     Оценка пользователей
-                    {props.isSortedByRate ? <img src={sort} alt='sorted'></img> : null}
+                    {isSortedByRate ? <img src={sort} alt='sorted'></img> : null}
                 </div>
                 <div>
                     Сравнить
@@ -94,7 +96,7 @@ const Instruments = (props) => {
             <div className={styles.pages}>
                 {pages.map(p => {
                     return <span className={styles.currentPage && styles.selectedPage}
-                        onClick={() => {onPageChanged(p)}}>{p}</span>
+                        onClick={() => {handlePageChanged(p)}}>{p}</span>
                 })}
             </div>
         </div>

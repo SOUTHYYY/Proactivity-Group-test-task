@@ -6,7 +6,6 @@ import {requestCompanies, getIsSortedByRate, getIsSortedByWorksCount,
 import {addFavoriteItem} from '../../redux/favoritesReducer'
 import Instruments from './Instruments';
 import Preloader from '../Common/Preloader/Preloader';
-import { prototype } from 'events';
 
 class InstrumentContainer extends React.Component {
     componentWillMount() {
