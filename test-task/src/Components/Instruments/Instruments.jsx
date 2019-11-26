@@ -5,10 +5,10 @@ import sort from '../../image/sort-down.svg'
 
 
 
-const Instruments = ({companies, addFavoriteItem, isFavoriteActionCreator, isSortedByRate,
+const Instruments = ({ companies, addFavoriteItem, isFavoriteActionCreator, isSortedByRate,
     totalCompaniesCount, sotrCompanies, getIsSortedByRate,
     requestCompanies, isSortedByWorksCount, getIsSortedByWorksCount,
-    isSortedByPartnersCount, getIsSortedByPartnersCount, setCurrentPage, onPageChanged}) => {
+    isSortedByPartnersCount, getIsSortedByPartnersCount, setCurrentPage, onPageChanged }) => {
 
     let pagesCount = Math.ceil(totalCompaniesCount / 20)
     let pages = []
@@ -96,7 +96,7 @@ const Instruments = ({companies, addFavoriteItem, isFavoriteActionCreator, isSor
             <div className={styles.pages}>
                 {pages.map(p => {
                     return <span className={styles.currentPage && styles.selectedPage}
-                        onClick={() => {handlePageChanged(p)}}>{p}</span>
+                        onClick={() => { handlePageChanged(p) }}>{p}</span>
                 })}
             </div>
         </div>
