@@ -63,7 +63,6 @@ const instrumentsReducer = (state = initialState, action) => {
                 totalCompaniesCount: action.totalCount
             }
         case SET_CURRENT_PAGE:
-            debugger
             return {
                 ...state,
                 currentPage: action.currentPage
@@ -81,7 +80,6 @@ export const getIsSortedByPartnersCount = () => ({ type: GET_IS_SORTED_BY_PARTNE
 export const setCompanies = (data) => ({ type: SET_COMPANIES, data })
 export const requestCompanies = (instrumentTypeCode, currentPage) => async (dispatch) => {
     let data = await CompaniesAPI.getCompanies(instrumentTypeCode, currentPage)
-    debugger
     dispatch(setCompanies(data))
 }
 export const getTotalCompaniesCount = () => async (dispatch) => {

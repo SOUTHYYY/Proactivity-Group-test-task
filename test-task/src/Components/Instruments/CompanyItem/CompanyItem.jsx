@@ -3,40 +3,41 @@ import styles from './CompanyItem.module.css'
 import emptyCheckBox from '../../../image/check-box-empty.svg'
 import checkCheckBox from '../../../image/check-box-check.svg'
 
-const CompanyItem = (props) => {
+const CompanyItem = ({title, worksCount, partnersCount, rate, image, id, isFavorite,
+    addFavoriteItem, isFavoriteActionCreator}) => {
 
     const addItemToFavorite = () => {
         let data = {
-            title: props.title,
-            worksCount: props.worksCount,
-            partnersCount: props.partnersCount,
-            rate: props.rate,
-            image: props.image,
-            id: props.id,
-            isFavorite: props.isFavorite
+            title: title,
+            worksCount: worksCount,
+            partnersCount: partnersCount,
+            rate: rate,
+            image: image,
+            id: id,
+            isFavorite: isFavorite
         }
-        props.addFavoriteItem(data)
-        props.isFavoriteActionCreator(props.id)
+        addFavoriteItem(data)
+        isFavoriteActionCreator(id)
     }
     return <tr className={styles.border_bottom}>
         <th>
-            <img src={props.image} alt="ajnj" />
-            <p>{props.title}</p>
+            <img src={image} alt="ajnj" />
+            <p>{title}</p>
         </th>
         <th>
-            {props.worksCount} проекта
+            {worksCount} проекта
         </th>
         <th>
-            {props.partnersCount} партнера
+            {partnersCount} партнера
         </th>
         <th>
-            {props.rate}
+            {rate}
         </th>
         <th onClick={addItemToFavorite}>
-            {props.isFavorite ?
-                <img src={checkCheckBox} alt="" />
+            {isFavorite ?
+                <img src={checkCheckBox} alt="favotite" />
                 :
-                <img src={emptyCheckBox} alt="" />
+                <img src={emptyCheckBox} alt="favorite" />
             }
         </th>
     </tr>
