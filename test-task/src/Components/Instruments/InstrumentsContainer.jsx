@@ -13,7 +13,6 @@ class InstrumentContainer extends React.Component {
         this.props.getTotalCompaniesCount()
     }
     onPageChanged = () => {
-        debugger
         this.props.requestCompanies('cms',this.props.currentPage)
     }
 

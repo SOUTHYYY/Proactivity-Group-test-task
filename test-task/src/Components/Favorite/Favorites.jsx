@@ -5,7 +5,6 @@ import FavoriteCompanyItem from './FavoriteCompanyItem/FavoriteCompanyItem'
 
 
 const Favorites = ({favoriteItems, deleteFavoriteItem}) => {
-    debugger
 
     const EMPTY_LIST = 'К сожалению ваш список пуст, пожалуйста выберите нужные вам инструменты'
     const [favotiteCompanies, setFavotiteCompanies] = useState(favoriteItems)
