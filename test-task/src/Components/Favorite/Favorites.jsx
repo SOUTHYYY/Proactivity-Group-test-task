@@ -4,7 +4,7 @@ import FavoriteCompanyItem from './FavoriteCompanyItem/FavoriteCompanyItem'
 
 
 
-const Favorites = ({favoriteItems, deleteFavoriteItem}) => {
+const Favorites = ({ favoriteItems, deleteFavoriteItem }) => {
 
     const EMPTY_LIST = 'К сожалению ваш список пуст, пожалуйста выберите нужные вам инструменты'
     const [favotiteCompanies, setFavotiteCompanies] = useState(favoriteItems)
@@ -17,9 +17,9 @@ const Favorites = ({favoriteItems, deleteFavoriteItem}) => {
     let favorite = favotiteCompanies.map(item =>
         <FavoriteCompanyItem title={item.title}
             id={item.id}
-            key={item.id}
             rate={item.rate}
             partnersCount={item.partnersCount}
+            key={item.id}
             worksCount={item.worksCount}
             image={item.image}
             deleteFavoriteItem={deleteFavoriteItem} />
@@ -28,11 +28,13 @@ const Favorites = ({favoriteItems, deleteFavoriteItem}) => {
         <h1>Выбранные компании:</h1>
         {favotiteCompanies.length ?
             <div className={styles.Favorites_items}>
-                {favotiteCompanies.length ? 
-                <table>
-                    {favorite}
-                </table>
-                 : EMPTY_LIST}
+                {favotiteCompanies.length ?
+                    <table>
+                        <tbody>
+                            {favorite}
+                        </tbody>
+                    </table>
+                    : EMPTY_LIST}
             </div>
             :
             <div className={styles.EmptyList}>
