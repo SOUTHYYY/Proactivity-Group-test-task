@@ -72,7 +72,7 @@ const Instruments = ({ companies, addFavoriteItem, isFavoriteActionCreator, isSo
                 <div className={styles.Instruments_header__titles}>
                     Название
                 </div>
-                <div className={styles.Instruments_header__projects} activeClassName={styles.active} onClick={sotrCompanysByRateByWorkCount}>
+                <div className={styles.Instruments_header__projects} onClick={sotrCompanysByRateByWorkCount}>
                     Проекты
                     {isSortedByWorksCount ? <img src={sort} alt='sorted'></img> : null}
                 </div>
@@ -90,12 +90,14 @@ const Instruments = ({ companies, addFavoriteItem, isFavoriteActionCreator, isSo
             </div>
             <div className={styles.Instruments_items}>
                 <table>
-                    {companyItems}
+                    <tbody>
+                        {companyItems}
+                    </tbody>
                 </table>
             </div>
             <div className={styles.pages}>
                 {pages.map(p => {
-                    return <span className={styles.currentPage && styles.selectedPage}
+                    return <span key={p} className={styles.currentPage && styles.selectedPage}
                         onClick={() => { handlePageChanged(p) }}>{p}</span>
                 })}
             </div>
