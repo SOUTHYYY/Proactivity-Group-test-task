@@ -8,7 +8,7 @@ import Instruments from './Instruments';
 import Preloader from '../Common/Preloader/Preloader';
 
 class InstrumentContainer extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
         this.props.requestCompanies('cms', 1)
         this.props.getTotalCompaniesCount()
     }

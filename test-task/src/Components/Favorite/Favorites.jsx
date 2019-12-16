@@ -1,48 +1,48 @@
-import React, { useState, useEffect } from 'react';
-import styles from './Favorite.module.css'
-import FavoriteCompanyItem from './FavoriteCompanyItem/FavoriteCompanyItem'
-
-
+import React, { useState, useEffect } from "react";
+import styles from "./Favorite.module.css";
+import FavoriteCompanyItem from "./FavoriteCompanyItem/FavoriteCompanyItem";
 
 const Favorites = ({ favoriteItems, deleteFavoriteItem }) => {
+  const EMPTY_LIST =
+    "К сожалению ваш список пуст, пожалуйста выберите нужные вам инструменты";
+  const [favotiteCompanies, setFavotiteCompanies] = useState(favoriteItems);
 
-    const EMPTY_LIST = 'К сожалению ваш список пуст, пожалуйста выберите нужные вам инструменты'
-    const [favotiteCompanies, setFavotiteCompanies] = useState(favoriteItems)
+  useEffect(() => {
+    setFavotiteCompanies(favoriteItems);
+  }, [favoriteItems]);
 
-    useEffect(() => {
-        setFavotiteCompanies(favoriteItems)
-    }, [favoriteItems])
-    console.log('favoriteItems', favoriteItems)
-
-    let favorite = favotiteCompanies.map(item =>
-        <FavoriteCompanyItem title={item.title}
-            id={item.id}
-            rate={item.rate}
-            partnersCount={item.partnersCount}
-            key={item.id}
-            worksCount={item.worksCount}
-            image={item.image}
-            deleteFavoriteItem={deleteFavoriteItem} />
-    )
-    return <div className={styles.Favorites}>
-        <h1>Выбранные компании:</h1>
-        {favotiteCompanies.length ?
-            <div className={styles.Favorites_items}>
-                {favotiteCompanies.length ?
-                    <table>
-                        <tbody>
-                            {favorite}
-                        </tbody>
-                    </table>
-                    : EMPTY_LIST}
-            </div>
-            :
-            <div className={styles.EmptyList}>
-                <p>{EMPTY_LIST}</p>
-            </div>
-
-        }
+  let favorite = favotiteCompanies.map(item => {
+    const { id } = item;
+    return (
+      <FavoriteCompanyItem
+        item={item}
+        key={id}
+        deleteFavoriteItem={deleteFavoriteItem}
+      />
+    );
+  });
+  const items = favotiteCompanies.length ? (
+    <div className={styles.Favorites_items}>
+      {favotiteCompanies.length ? (
+        <table>
+          <tbody>{favorite}</tbody>
+        </table>
+      ) : (
+        EMPTY_LIST
+      )}
     </div>
-}
+  ) : (
+    <div className={styles.EmptyList}>
+      <p>{EMPTY_LIST}</p>
+    </div>
+  );
 
-export default Favorites
+  return (
+    <div className={styles.Favorites}>
+      <h1>Выбранные компании:</h1>
+      {items}
+    </div>
+  );
+};
+
+export default Favorites;
