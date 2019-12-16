@@ -1,5 +1,7 @@
-const ADD_FAVORITE_ITEM = 'ADD_FAVORITE_ITEM'
-const DELETE_FAVOROTE_ITEM = 'DELETE_FAVOROTE_ITEM'
+import {
+    ADD_FAVORITE_ITEM,
+    DELETE_FAVOROTE_ITEM
+} from './consts/favoriteConsts'
 
 export const initialState = {
     favoriteItems: [],
