@@ -8,11 +8,15 @@ export const initialState = {
 }
 
 let updateItems = (arr, payload) => {
-    let items = arr
-    if (arr.findIndex(el => el.id === payload.id)) {
-        items = [
-            ...items,
-            payload
+    let items = [...arr]
+    const item = items.find(el => el.id === payload.id)
+    if (item === undefined) {
+        items = [...items, payload]
+    } else {
+        const itemIndex = items.findIndex(el => el.id === item.id)
+        return [
+            ...items.slice(0, itemIndex),
+            ...items.slice(itemIndex + 1)
         ]
     }
     return items
