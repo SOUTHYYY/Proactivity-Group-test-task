@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Instruments.module.css";
 import CompanyItem from "./CompanyItem/CompanyItem";
 import sort from "../../image/sort-down.svg";
+import counter from "../Common/Counter/Counter";
 
 const Instruments = ({
   companies,
@@ -19,13 +20,6 @@ const Instruments = ({
   setCurrentPage,
   onPageChanged
 }) => {
-  let pagesCount = Math.ceil(totalCompaniesCount / 20);
-  let pages = [];
-
-  for (let i = 1; i <= pagesCount; i++) {
-    pages.push(i);
-  }
-
   let companyItems = companies.map(item => {
     const { id } = item;
     return (
@@ -69,7 +63,7 @@ const Instruments = ({
     setCurrentPage(p);
     onPageChanged();
   };
-  const panginator = pages.map(p => {
+  const panginator = counter(totalCompaniesCount).map(p => {
     return (
       <span
         key={p}
@@ -82,9 +76,13 @@ const Instruments = ({
       </span>
     );
   });
-  const projectsImage = isSortedByWorksCount ? <img src={sort} alt="sorted"></img> : null
-  const partnersImage = isSortedByPartnersCount ? <img src={sort} alt="sorted"></img> : null
-  const rateImage = isSortedByRate ? <img src={sort} alt="sorted"></img> : null
+  const projectsImage = isSortedByWorksCount ? (
+    <img src={sort} alt="sorted"></img>
+  ) : null;
+  const partnersImage = isSortedByPartnersCount ? (
+    <img src={sort} alt="sorted"></img>
+  ) : null;
+  const rateImage = isSortedByRate ? <img src={sort} alt="sorted"></img> : null;
 
   return (
     <div className={styles.Instruments}>
