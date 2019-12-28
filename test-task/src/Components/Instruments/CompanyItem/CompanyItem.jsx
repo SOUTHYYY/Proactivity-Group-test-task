@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./CompanyItem.module.css";
 import emptyCheckBox from "../../../image/check-box-empty.svg";
 import checkCheckBox from "../../../image/check-box-check.svg";
+import default_company from '../../../image/default_company.png'
 
 const CompanyItem = ({ item, addFavoriteItem, isFavoriteActionCreator }) => {
   const {
@@ -14,12 +15,13 @@ const CompanyItem = ({ item, addFavoriteItem, isFavoriteActionCreator }) => {
     isFavorite
   } = item;
 
+  const checkedImage = image === null ? default_company : image
   const addItemToFavorite = () => {
     let data = {
       title,
       worksCount,
       partnersCount,
-      image,
+      image: checkedImage,
       id,
       isFavorite
     };
@@ -32,15 +34,16 @@ const CompanyItem = ({ item, addFavoriteItem, isFavoriteActionCreator }) => {
     <img src={emptyCheckBox} alt="favorite" />
   );
   return (
-    <tr className={styles.border_bottom}>
+    <tr>
       <th>
-        <img src={image} alt="ajnj" />
+        <img src={checkedImage} alt="ajnj" />
         <p>{title}</p>
       </th>
       <th>{worksCount} проекта</th>
       <th>{partnersCount} партнера</th>
       <th>{rate}</th>
-      <th onClick={addItemToFavorite}>{checkbox}</th>
+      <th className={styles.image}
+          onClick={addItemToFavorite}>{checkbox}</th>
     </tr>
   );
 };
