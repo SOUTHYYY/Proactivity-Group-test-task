@@ -27,11 +27,10 @@ const Instruments = ({
       />
     );
   });
-  console.log(isSortedByRate)
 
-  const setCurrentSotr = sotrType => {
-    sortCompanies(sotrType)
-  }
+const setCurrentSotrt = sortType => {
+  sortCompanies(sortType)
+}
   const handlePageChanged = p => {
     setCurrentPage(p);
   };
@@ -51,20 +50,20 @@ const Instruments = ({
               <div>Название</div>
             </th>
             <th>
-              <NavLink  to='/' onClick={() => setCurrentSotr('works_count')}>
+              <NavLink  to='/' onClick={() => setCurrentSotrt('works_count')}>
                 Проекты
                 {projectsImage}
               </NavLink>
             </th>
             <th>
-              <div onClick={() => setCurrentSotr('partners_count')}>
+              <div onClick={() => setCurrentSotrt('partners_count')}>
                 Партнеры
                 {partnersImage}
               </div>
             </th>
             <th>
               <div
-                onClick={() => setCurrentSotr('rate')}
+                onClick={() => setCurrentSotrt('rate')}
               >
                 Рейтинг
                 {rateImage}
