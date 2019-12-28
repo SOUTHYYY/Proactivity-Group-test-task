@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
-import instrumentReducer from './instrumentReducer'
-import favoritesReducer from './favoritesReducer'
+import instrumentReducer from './reducers/instrumentReducer'
+import favoritesReducer from './reducers/favoritesReducer'
 import thunkMiddleeware from 'redux-thunk'
 
 
