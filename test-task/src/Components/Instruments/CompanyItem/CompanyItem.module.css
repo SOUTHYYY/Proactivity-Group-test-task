@@ -1,49 +1,5 @@
 
-tr{
-    border-bottom: 1px solid lightgray;
-    display: flex;   
-}
-
-th{
-    padding: 20px 0px;
-    
-}
-
-img{ 
-    width: 20px;
-    height: 15px;
-    margin-right: 10px;
-}
-
-th{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-weight: normal;
-}
-
-th:first-child{
-    width: 400px;
-    font-weight: bold;
-}
-th:nth-child(2){
-    width: 150px;
-    
-}
-
-th:nth-child(3){
-    width: 150px;
-}
-
-th:nth-child(4){
-    
-    width: 150px;
-}
-
-th:last-child{
-    margin-left: 100px;
-}
-th:last-child img{
+.image img{    
     width: 20px;
     height: 20px;
 }
