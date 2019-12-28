@@ -1,56 +1,58 @@
-import React from 'react';
-import {connect} from 'react-redux'
-import {requestCompanies, getIsSortedByRate, getIsSortedByWorksCount,
-    getIsSortedByPartnersCount, isFavoriteActionCreator, sotrCompanies,
-    getTotalCompaniesCount, setCurrentPage} from '../../redux/instrumentReducer'
-import {addFavoriteItem} from '../../redux/favoritesReducer'
-import Instruments from './Instruments';
-import Preloader from '../Common/Preloader/Preloader';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import {
+  requestCompanies,
+  isFavoriteActionCreator,
+  sortCompanies,
+  getTotalCompaniesCount,
+  setCurrentPage
+} from "../../redux/actions/instruments-actions";
+import { addFavoriteItem } from "../../redux/actions/favorites-actions";
+import Instruments from "./Instruments";
+import Preloader from "../Common/Preloader/Preloader";
 
-class InstrumentContainer extends React.Component {
-    componentDidMount() {
-        this.props.requestCompanies('cms', 1)
-        this.props.getTotalCompaniesCount()
-    }
-    onPageChanged = () => {
-        this.props.requestCompanies('cms',this.props.currentPage)
-    }
+const InstrumentContainer = props => {
+  useEffect(() => {
+    props.requestCompanies("cms", props.currentPage);
+  }, [props.currentPage]);
 
+  if (props.loading) {
+    return <Preloader />;
+  }
+  return (
+    <>
+      <Instruments
+        companies={props.companies}
+        isSortedByRate={props.isSortedByRate}
+        requestCompanies={props.requestCompanies}
+        isSortedByWorksCount={props.isSortedByWorksCount}
+        isSortedByPartnersCount={props.isSortedByPartnersCount}
+        addFavoriteItem={props.addFavoriteItem}
+        isFavoriteActionCreator={props.isFavoriteActionCreator}
+        sortCompanies={props.sortCompanies}
+        totalCompaniesCount={props.totalCompaniesCount}
+        setCurrentPage={props.setCurrentPage}
+        currentPage={props.currentPage}
+      />
+    </>
+  );
+};
 
-        render() {
-            return <>
-                {this.props.isFetching ? <Preloader /> : null}
-                <Instruments companies={this.props.companies}
-                isSortedByRate={this.props.isSortedByRate} 
-                requestCompanies={this.props.requestCompanies}
-                getIsSortedByRate={this.props.getIsSortedByRate}
-                getIsSortedByWorksCount={this.props.getIsSortedByWorksCount}
-                isSortedByWorksCount={this.props.isSortedByWorksCount}
-                getIsSortedByPartnersCount={this.props.getIsSortedByPartnersCount}
-                isSortedByPartnersCount={this.props.isSortedByPartnersCount}
-                addFavoriteItem={this.props.addFavoriteItem}
-                isFavoriteActionCreator={this.props.isFavoriteActionCreator}
-                sotrCompanies={this.props.sotrCompanies}
-                totalCompaniesCount={this.props.totalCompaniesCount}
-                setCurrentPage={this.props.setCurrentPage}
-                onPageChanged={this.onPageChanged}
-                currentPage={this.props.currentPage}
-                /> 
-            </>
-        }
-}
-
-const mapStateToProps = (state) => {
-    return {
-        companies: state.instrumentsPage.companies,
-        isSortedByRate: state.instrumentsPage.isSortedByRate,
-        isSortedByWorksCount: state.instrumentsPage.isSortedByWorksCount,
-        isSortedByPartnersCount: state.instrumentsPage.isSortedByPartnersCount,
-        totalCompaniesCount: state.instrumentsPage.totalCompaniesCount,
-        currentPage: state.instrumentsPage.currentPage
-    }
-}
-export default connect(mapStateToProps,{
-    requestCompanies, getIsSortedByRate, getIsSortedByWorksCount,
-    addFavoriteItem, isFavoriteActionCreator, sotrCompanies,
-    getIsSortedByPartnersCount, getTotalCompaniesCount, setCurrentPage})(InstrumentContainer)
+const mapStateToProps = state => {
+  return {
+    companies: state.instrumentsPage.companies,
+    isSortedByRate: state.instrumentsPage.isSortedByRate,
+    isSortedByWorksCount: state.instrumentsPage.isSortedByWorksCount,
+    isSortedByPartnersCount: state.instrumentsPage.isSortedByPartnersCount,
+    totalCompaniesCount: state.instrumentsPage.totalCompaniesCount,
+    currentPage: state.instrumentsPage.currentPage,
+    loading: state.instrumentsPage.loading
+  };
+};
+export default connect(mapStateToProps, {
+  requestCompanies,
+  addFavoriteItem,
+  isFavoriteActionCreator,
+  sortCompanies,
+  setCurrentPage
+})(InstrumentContainer);
