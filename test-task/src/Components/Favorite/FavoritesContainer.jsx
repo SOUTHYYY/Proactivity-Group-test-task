@@ -1,7 +1,7 @@
 import React from 'react';
 import Favorites from './Favorites';
 import {connect} from 'react-redux'
-import {addFavoriteItem, deleteFavoriteItem} from '../../redux/favoritesReducer'
+import {addFavoriteItem, deleteFavoriteItem} from '../../redux/actions/favorites-actions'
 
 class FavoritesContainer extends React.Component {
     render(){
